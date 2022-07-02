@@ -19,14 +19,14 @@ namespace WaterWatch.Controllers
             _waterConsumptionRepository = waterConsumptionRepository;
         }
 
-        [HttpGet("/waterconsumption/getall")]
+        [HttpsGet("/waterconsumption/getall")]
         public async Task<ActionResult<IEnumerable<WaterConsumption>>> GetAll()
         {
             var wcData = await _waterConsumptionRepository.GetAll();
             return Ok(wcData);
         }
 
-        [HttpGet("/waterconsumption/topten")]
+        [HttpsGet("/waterconsumption/topten")]
         public async Task<ActionResult<IEnumerable<WaterConsumption>>> GetTopTen()
         {
             var wcData = await _waterConsumptionRepository.GetTopTenConsumers();
